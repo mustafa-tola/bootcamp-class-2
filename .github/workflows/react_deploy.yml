@@ -1,6 +1,10 @@
-name: Deploy Website
+name: React App Deploy To Surge
 
-on: [push]
+on: 
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -21,4 +25,4 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
-        run: surge ./build bootcamp_react_ziakhan.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./build bootcamp_react_mustafa.surge.sh --token ${{ secrets.SURGE_TOKEN }}
